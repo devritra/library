@@ -11,6 +11,19 @@
         <div class="main_content_area">
             <div class="control_box">
                 <button>New Book</button>
+                <dialog>
+                    <form action="#" method="dialog">
+                        <label for="book_name">Name: </label>
+                        <input type="text" name="book_name" id="book_name" required>
+                        <label for="author_name">Author: </label>
+                        <input type="text" name="author_name" id="author_name" required>
+                        <label for="page_no">Total Pages: </label>
+                        <input type="tel" name="page_no" id="page_no" pattern="[0-9]*" title="Type only numbers" inputmode="numeric" required>
+                        <label for="book_image">An image of the book (optional)</label>
+                        <input type="file" name="book_image" id="book_image" accept="image/*">
+                        <button type="submit">Add Book</button>
+                    </form>
+                </dialog>
             </div>
             <div class="book_display"></div>
         </div>
