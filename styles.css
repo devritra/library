@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     border: none;
+    outline: none;
     font: inherit;
 }
 
@@ -68,11 +69,50 @@
     justify-content: space-between;
 }
 .book_card_btn_holder>button{
-    padding: 10px 20px;
+    padding: 8px 10px;
     border-radius: 10px;
     color: rgb(136, 0, 0);
     background-color: rgb(255, 102, 102);
+    font-weight: bold;
 }
 .book_card_btn_holder>button:hover{
     opacity: 50%;
+}
+
+/* dialog box styles */
+dialog{
+    position: absolute;
+    top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+dialog form{
+    padding: 30px;
+    background-color: rgb(99, 59, 199);
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 20px;
+}
+.form_cells{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: white;
+}
+.form_cells input{
+    border-radius: 5px;
+    background-color:rgb(161, 146, 199);
+    padding: 5px 5px 5px 10px;
+}
+.form_cells:last-of-type{
+    justify-content: center;
+    align-items: center;
+}
+.form_cells:last-of-type>button{
+    padding: 8px 10px;
+    border-radius: 5px;
+    background-color: rgb(123, 220, 123);
+    color: rgb(0, 104, 0);
+    font-weight: bold;
 }
