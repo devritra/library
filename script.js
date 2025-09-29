@@ -55,7 +55,16 @@ function displayBookCards(bookShelf){
         bookCard.classList.add("book_card");
         bookCardBtnHolder.classList.add("book_card_btn_holder")
         readBtn.textContent = "Not Read";
+        readBtn.style.backgroundColor = "rgb(255, 102, 102)";
+        readBtn.style.color = "rgb(136, 0, 0)";
+        readBtn.addEventListener("click",(e)=>{
+            toggleReadBtn(e.target);
+        })
         bookRemoveBtn.textContent = "Remove";
+        bookRemoveBtn.addEventListener("click",(e)=>{
+            e.target.parentNode.parentNode.remove();
+            bookShelf.splice(i,1);
+        })
         //aaaaaaa
         let book = bookShelf[i];
         bookNameHolder.textContent = `Name: ${book.name}`;
@@ -73,6 +82,12 @@ function displayBookCards(bookShelf){
     }
     return;
 } 
+function toggleReadBtn(button){
+    button.textContent = button.textContent === "Not Read"?"Read":"Not Read";
+    button.style.backgroundColor = button.style.backgroundColor === "rgb(255, 102, 102)"? "rgb(123, 220, 123)":"rgb(255, 102, 102)";
+    button.style.color = button.style.color === "rgb(136, 0, 0)"? "rgb(0, 104, 0)":"rgb(136, 0, 0)";
+    return;
+}
 // submitBtn.addEventListener("click",(e)=>{
 //     e.preventDefault();
 // })

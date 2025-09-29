@@ -65,11 +65,12 @@
     border-radius: 10px;
 }
 .book_card_btn_holder{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
 }
 .book_card_btn_holder>button{
-    padding: 8px 10px;
+    height: 40px;
     border-radius: 10px;
     color: rgb(136, 0, 0);
     background-color: rgb(255, 102, 102);
