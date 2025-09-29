@@ -11,7 +11,7 @@ const submitBtn = document.querySelector(".form_cells:last-of-type>button");
 //inputs
 const bookName = document.querySelector("#book_name");
 const authorName = document.querySelector("#author_name");
-const pageNo = document.querySelector("#page_no");
+let pageNo = document.querySelector("#page_no");
 const bookImage = document.querySelector("#book_image");
 //book display area
 const bookDisplayArea = document.querySelector(".book_display");
@@ -64,7 +64,11 @@ function displayBookCards(bookShelf){
 //     e.preventDefault();
 // })
 submitBtn.addEventListener("click", ()=>{
-    addBookToBookShelf(bookName.value, authorName.value, pageNo.value,bookImage.value);
+    let pageNoCheck = Number(pageNo.value);
+    if(bookName.value==="" || authorName.value==="" || pageNoCheck === 0 || isNaN(pageNoCheck)){
+        return;
+    }
+    addBookToBookShelf(bookName.value, authorName.value, pageNoCheck,bookImage.value);
     displayBookCards(bookShelf);
     return;
 })
