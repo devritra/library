@@ -11,19 +11,24 @@
     background-color: aqua;
     padding: 100px;
     background-image: linear-gradient(60deg, rgb(75, 3, 184), rgb(153, 67, 206), rgb(172, 137, 193));
+    overflow: auto;
 }
 .main_content_area{
     display: grid;
-    justify-items: center;
+    justify-items: stretch;
+    gap: 50px;
 }
 .control_box{
     width: 30%;
     min-width: 150px;
-    height: 200px;
+    max-width: 400px;
+    height: 150px;
     background-color: rgb(172, 137, 193);
     border-radius: 25px;
     display: grid;
     place-content: center;
+    padding: 20px;
+    justify-self: center;
 }
 .control_box>button{
     box-sizing: content-box;
@@ -34,4 +39,14 @@
     background-color: rgb(123, 220, 123);
     color: rgb(0, 104, 0);
     font-weight: bold;
+}
+.book_display{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,250px));
+    gap: 30px 50px;
+    justify-content: center;
+}
+.books{
+    background-color: red;
+    border-radius: 10px;
 }
