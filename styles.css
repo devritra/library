@@ -117,3 +117,18 @@ dialog form{
     color: rgb(0, 104, 0);
     font-weight: bold;
 }
+.main_wrapper>h1,
+.main_wrapper>p{
+    text-align: center;
+    font-size: 1.5rem;
+    color: rgb(80, 0, 71);
+}
+.main_wrapper>h1{
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgb(80, 0, 71);
+    margin-bottom: 50px;
+}
+.main_wrapper>p:last-of-type{
+    margin-bottom: 50px;
+}
