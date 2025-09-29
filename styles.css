@@ -1,1 +1,26 @@
-/* styles coming soon */
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main_wrapper{
+    height: 100vh;
+    background-color: aqua;
+    padding: 100px;
+}
+.main_content_area{
+    display: grid;
+    justify-items: center;
+}
+.control_box{
+    width: 30%;
+    min-width: 150px;
+    height: 200px;
+    background-color: yellow;
+    border-radius: 25px;
+    display: grid;
+    place-content: center;
+}
