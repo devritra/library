@@ -4,6 +4,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border: none;
+    font: inherit;
 }
 
 .main_wrapper{
@@ -20,7 +22,7 @@
 }
 .control_box{
     width: 30%;
-    min-width: 150px;
+    min-width: 200px;
     max-width: 400px;
     height: 150px;
     background-color: rgb(172, 137, 193);
@@ -39,6 +41,7 @@
     background-color: rgb(123, 220, 123);
     color: rgb(0, 104, 0);
     font-weight: bold;
+    text-wrap: nowrap;
 }
 .book_display{
     display: grid;
@@ -46,7 +49,30 @@
     gap: 30px 50px;
     justify-content: center;
 }
-.books{
-    background-color: red;
+.book_card{
+    background-image: linear-gradient(60deg, rgb(59, 4, 198), rgb(116, 0, 232));
+    border-radius: 15px;
+    color: rgb(172, 137, 193);
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+    height: 440px;
+    box-shadow: 0 0 20px rgb(251, 177, 255);
+}
+.book_card img{
+    width: 100%;
     border-radius: 10px;
+}
+.book_card_btn_holder{
+    display: flex;
+    justify-content: space-between;
+}
+.book_card_btn_holder>button{
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: rgb(136, 0, 0);
+    background-color: rgb(255, 102, 102);
+}
+.book_card_btn_holder>button:hover{
+    opacity: 50%;
 }
