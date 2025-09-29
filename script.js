@@ -38,8 +38,16 @@ function Book(name, author, pages, image){
     this.image = image;
 }
 function addBookToBookShelf(name, author, pages, image){
-    const book = new Book(name, author, pages, image);
-    bookShelf.push(book);
+    if(image===""){
+        image = "./img/3854108_81501.jpg"
+        const book = new Book(name, author, pages, image);
+        bookShelf.push(book);
+        return;
+    } else {
+        const book = new Book(name, author, pages, image);
+        bookShelf.push(book);
+        return;
+    }
 }
 function displayBookCards(bookShelf){
     let shelfLength = bookShelf.length - 1;
