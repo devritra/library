@@ -31,7 +31,6 @@
 }
 .main_wrapper{
     height: 100vh;
-    background-color: aqua;
     padding: 100px;
     background-image: linear-gradient(60deg, rgb(75, 3, 184), rgb(153, 67, 206), rgb(172, 137, 193));
     overflow: auto;
