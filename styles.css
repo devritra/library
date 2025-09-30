@@ -56,12 +56,14 @@
     color: rgb(172, 137, 193);
     padding: 20px;
     display: grid;
+    grid-template-rows: 200px 30px 30px 30px 50px;
     gap: 20px;
-    height: 440px;
     box-shadow: 0 0 20px rgb(251, 177, 255);
+    align-items: center;
 }
 .book_card img{
     width: 100%;
+    height: 100%;
     border-radius: 10px;
 }
 .book_card_btn_holder{
@@ -75,9 +77,6 @@
     color: rgb(136, 0, 0);
     background-color: rgb(255, 102, 102);
     font-weight: bold;
-}
-.book_card_btn_holder>button:hover{
-    opacity: 50%;
 }
 
 /* dialog box styles */
@@ -131,4 +130,10 @@ dialog form{
 }
 .main_wrapper>p:last-of-type{
     margin-bottom: 50px;
+}
+/* button hovers */
+.book_card_btn_holder>button:hover,
+.control_box>button:hover,
+.form_cells:last-of-type>button:hover{
+    opacity: 50%;
 }
