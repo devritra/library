@@ -35,6 +35,17 @@
     padding: 100px;
     background-image: linear-gradient(60deg, rgb(75, 3, 184), rgb(153, 67, 206), rgb(172, 137, 193));
     overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: purple transparent;
+}
+.main_wrapper::-webkit-scrollbar{
+    width: 10px;
+}
+.main_wrapper::-webkit-scrollbar-track{
+    background: transparent;
+}
+.main_wrapper::-webkit-scrollbar-thumb{
+    background: purple;
 }
 .main_content_area{
     display: grid;
@@ -157,4 +168,17 @@ dialog form{
 .control_box>button:hover,
 .form_cells:last-of-type>button:hover{
     opacity: 50%;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    height: 20px;
+    background-color: rgb(59, 0, 100);
+    width: 100vw;
+    text-align: center;
+    font-size: 0.7rem;
+}
+footer a,
+footer p{
+    color: white;
 }
