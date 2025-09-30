@@ -172,11 +172,14 @@ dialog form{
 footer{
     position: fixed;
     bottom: 0;
-    height: 20px;
+    height: 32px;
     background-color: rgb(59, 0, 100);
     width: 100vw;
     text-align: center;
     font-size: 0.7rem;
+    line-height: 1;
+    display: grid;
+    place-content: center;
 }
 footer a,
 footer p{
