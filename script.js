@@ -13,13 +13,26 @@ showDialogBtn.addEventListener("click",()=> // "New Book" button eventlistner
     dialog.showModal();
 })
 
-function Book(name, author, pages, image) // book constructor
-{
-    this.name = name;
-    this.author = author;
-    this.pages = pages;
-    this.image = image;
-    this.id = crypto.randomUUID();
+// function Book(name, author, pages, image) // book constructor
+// {
+//     this.name = name;
+//     this.author = author;
+//     this.pages = pages;
+//     this.image = image;
+//     this.id = crypto.randomUUID();
+// }
+class Book{
+    constructor(name, author, pages, image){
+        this.name = name;
+        this.author = author;
+        this.pages = pages;
+        this.image = image;
+        this.read = false;
+        this.id = crypto.randomUUID();
+    }
+    toggleRead(){
+        this.read = this.read === false ? true : false;
+    }
 }
 function addBookToBookShelf(name, author, pages, image) // makes the book and adds to the bookshelf array
 { 
@@ -37,12 +50,20 @@ function addBookToBookShelf(name, author, pages, image) // makes the book and ad
         return;
     }
 }
-function toggleReadBtn(button) // toggles the state of Read button
+function toggleReadBtn(button, book) // toggles the state of Read button
 {
-    button.textContent = button.textContent === "Not Read"?"Read":"Not Read";
-    button.style.backgroundColor = button.style.backgroundColor === "rgb(255, 102, 102)"? "rgb(123, 220, 123)":"rgb(255, 102, 102)";
-    button.style.color = button.style.color === "rgb(136, 0, 0)"? "rgb(0, 104, 0)":"rgb(136, 0, 0)";
-    return;
+    if(book.read === true){
+        button.textContent = "Read";
+        button.style.backgroundColor = "rgb(123, 220, 123)";
+        button.style.color = "rgb(0, 104, 0)";
+        return;
+    }
+    else{
+        button.textContent = "Not Read";
+        button.style.backgroundColor = "rgb(255, 102, 102)";
+        button.style.color = "rgb(136, 0, 0)";
+        return;
+    }
 }
 function displayBookCards(bookShelf) // displays the book object information in respective cards on the page
 {
@@ -60,12 +81,12 @@ function displayBookCards(bookShelf) // displays the book object information in 
         const bookRemoveBtn = document.createElement("button");
         bookCard.classList.add("book_card");
         bookCardBtnHolder.classList.add("book_card_btn_holder")
-        readBtn.textContent = "Not Read";
-        readBtn.style.backgroundColor = "rgb(255, 102, 102)";
-        readBtn.style.color = "rgb(136, 0, 0)";
+        toggleReadBtn(readBtn, bookShelf[i]);
         readBtn.addEventListener("click",(e)=>
         {
-            toggleReadBtn(e.target);
+            console.log(bookShelf[i]);
+            bookShelf[i].toggleRead();
+            toggleReadBtn(e.target, bookShelf[i]);
         })
         bookRemoveBtn.textContent = "Remove";
         bookRemoveBtn.addEventListener("click",(e)=>
@@ -93,7 +114,7 @@ function displayBookCards(bookShelf) // displays the book object information in 
 submitBtn.addEventListener("click", ()=> // "Add book" button event lisstner
 {
     let pageNoCheck = Number(pageNo.value);
-    if(bookName.value==="" || authorName.value==="" || pageNoCheck === 0 || isNaN(pageNoCheck))
+    if(bookName.value==="" || authorName.value==="" || pageNoCheck === 0 || pageNoCheck < 0 || isNaN(pageNoCheck))
     {
         return;
     }
