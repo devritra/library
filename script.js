@@ -13,14 +13,6 @@ showDialogBtn.addEventListener("click",()=> // "New Book" button eventlistner
     dialog.showModal();
 })
 
-// function Book(name, author, pages, image) // book constructor
-// {
-//     this.name = name;
-//     this.author = author;
-//     this.pages = pages;
-//     this.image = image;
-//     this.id = crypto.randomUUID();
-// }
 class Book{
     constructor(name, author, pages, image){
         this.name = name;
